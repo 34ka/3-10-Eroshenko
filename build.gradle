@@ -14,7 +14,13 @@ repositories {
 test {
     useJUnitPlatform()
 
-    systemProperty("browser.name", "chrome")
+    systemProperty("service.name", "testing-o2")
+
+//    systemProperty("device", "pixel-6")
+//    systemProperty("device", "iphone-12")
+
+//    systemProperty("webdriver.browser.name", "CHROME")
+//    systemProperty("webdriver.remote.password", "256456453456")
 }
 
 dependencies {

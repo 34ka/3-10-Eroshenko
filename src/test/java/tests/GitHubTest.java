@@ -1,7 +1,9 @@
 package tests;
 
+import driver.ServiceConfig;
 import driver.WebDriverProvider;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -18,7 +20,8 @@ public class GitHubTest {
     }
     @Test
     public void testMainPage() {
-        driver.get("https://gitlab.com");
+        final ServiceConfig config = ConfigFactory.newInstance().create(ServiceConfig.class);
+        driver.get(config.webUrl());
     }
 
     @AfterEach
